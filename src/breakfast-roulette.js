@@ -2,13 +2,36 @@
 
 (function(exports){
 
-	var _users = [];
+	var _participants = [];
+	var _history = [];
 	
-	exports.setup = function(users){
-		_users = users;
+	exports.loadParticipants = function(participants){
+		_participants = participants;
 	};
-	exports.getUsers = function(){
-		return _users;
+	exports.participants = function(){
+		return _participants;
+	};
+	exports.addNewParticipant = function(participant){
+		_participants.push(participant);
+	};
+	exports.history = function(){
+		return _history;
+	};
+	exports.whoIsTheNext = function(){
+		// who was the last ? +1
+		throw ('not implemented');
+	};
+	exports.breakfastDone = function(participant){
+		if( typeof participants !== 'undefined'){
+			// reorganise order of participants
+		}
+		_history.push({ participant: exports.whoIsTheNext(), date: new Date()});
+	};
+	exports.cleanHistory = function(){
+		_history = [];
+	};
+	exports.cleanParticipants = function(){
+		_participants = [];
 	};
 
 }( typeof exports === 'undefined' ? (this.breakfast = {}) : exports ));
