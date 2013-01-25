@@ -17,20 +17,29 @@
 	exports.history = function(){
 		return _history;
 	};
-	exports.whoIsTheNext = function(){
-		// who was the last ? +1
-		throw ('not implemented');
+	exports.whoIsNext = function(){
+		var nextId = 0;
+		if(_history.length > 0){
+			nextId = _participants.indexOf(_history[_history.length - 1].participant)+1;
+			if(nextId >= _participants.length) nextId = 0;
+		}
+		return _participants[nextId];
 	};
 	exports.breakfastDone = function(participant){
-		if( typeof participants !== 'undefined'){
-			// reorganise order of participants
+		if( typeof participant !== 'undefined'){
+			var toMove = _participants.indexOf(participant);
+			if( toMove == -1 ) throw 'the given participant is not a participant, the system do not know him yet';
+			
+			var toReplace = _participants.indexOf(exports.whoIsNext());
+			_participants.splice(toMove, 1);
+			_participants.splice(toReplace, 0, participant);
 		}
-		_history.push({ participant: exports.whoIsTheNext(), date: new Date()});
+		_history.push({ participant: exports.whoIsNext(), date: new Date()});
 	};
-	exports.cleanHistory = function(){
+	exports.clearHistory = function(){
 		_history = [];
 	};
-	exports.cleanParticipants = function(){
+	exports.clearParticipants = function(){
 		_participants = [];
 	};
 
