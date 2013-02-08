@@ -11,9 +11,11 @@ body {
 a {
   color: #00B7FF;
 }
+.center {
+  text-align: center;
+}
 .home .hero-unit {
   background: none;
-  text-align: right;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 0, 0, 0.075);
 }
 .home .hero-unit h1 {
@@ -23,4 +25,24 @@ a {
   font-size: 40px;
   font-weight: 200;
   line-height: 1.25;
+}
+.home .hero-unit .btn-link {
+  color: white;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.75);
+}
+.home .hero-unit .btn-large {
+  margin-top: 20px;
+  padding: 19px 24px;
+  font-size: 24px;
+  font-weight: 200;
+  border: 0;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 5px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 5px rgba(0, 0, 0, 0.25);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 5px rgba(0, 0, 0, 0.25);
+  -webkit-transition: none;
+  -moz-transition: none;
+  transition: none;
 }

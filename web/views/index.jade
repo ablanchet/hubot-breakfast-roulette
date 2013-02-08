@@ -2,6 +2,16 @@ extends layout
 
 block content
 	div.home
-		div.hero-unit
+		div.hero-unit.pull-right
 			h1 Breakfast roulette
-			p Coming soon
+			div.row-fluid
+				div.span12
+					<button data-bind="click: done.load, css:{ disabled: done.loading }" class="pull-right btn btn-large btn-primary">The weekly breakfast just has been done !</button>
+			div.row-fluid
+				div.span12
+					div.pull-right.center
+						<button data-bind="click: next.load, css:{ disabled: next.loading }" class="pull-right btn btn-large">Who's next ?</button>
+						br
+						<button data-bind="click: history.load" class="btn btn-link">Show me the history</button>
+block scripts
+	script(src='/javascripts/home.js')

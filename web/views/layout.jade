@@ -6,7 +6,11 @@ html
 		link(rel='stylesheet', href='/stylesheets/lib/bootstrap-responsive.min.css')
 		link(rel='stylesheet', href='/stylesheets/style.css')
 	body
-		block content
-		footer
-			script(src='/javascripts/lib/jquery-1.9.1.min.js')
-			script(src='/javascripts/lib/bootstrap.min.js')
+		section.container-fluid
+			section.row-fluid
+				block content
+			footer.row-fluid
+				script(src='/javascripts/lib/jquery-1.9.1.min.js')
+				script(src='/javascripts/lib/ko.js')
+				script(src='/javascripts/lib/bootstrap.min.js')
+				block scripts
