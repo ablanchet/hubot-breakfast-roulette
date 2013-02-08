@@ -1,10 +1,26 @@
 body {
+  background-image: url(../images/bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background: url(../images/bg.jpg) no-repeat center center fixed;
-  background-size: cover;
   color: white;
 }
 a {
   color: #00B7FF;
+}
+.home .hero-unit {
+  background: none;
+  text-align: right;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 0, 0, 0.075);
+}
+.home .hero-unit h1 {
+  font-size: 120px;
+}
+.home .hero-unit p {
+  font-size: 40px;
+  font-weight: 200;
+  line-height: 1.25;
 }
