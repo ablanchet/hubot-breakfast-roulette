@@ -6,23 +6,28 @@ var LoaderViewModel = function(url, callback){
 	
 	this.loading = ko.observable(false);
 	this.load = function(){
-		// do something with the url
 		_me.loading(true);
-		setTimeout(function(){
+		$.get(url, function(res){
 			_me.loading(false);
-			callback();
-		}, 1000);
+			callback(res);
+		});
 	};
 };
 var HomeVm = function(){
-	this.history = new LoaderViewModel('', function(){
-		console.log('history');
+	this.history = new LoaderViewModel('history', function(res){
+		$(res).modal().on('hidden', function(){
+			$(this).detach();
+		});
 	});
-	this.next = new LoaderViewModel('', function(){
-		console.log('next');
+	this.next = new LoaderViewModel('next', function(res){
+		$(res).modal().on('hidden', function(){
+			$(this).detach();
+		});
 	});
-	this.done = new LoaderViewModel('', function(){
-		console.log('done');
+	this.done = new LoaderViewModel('done', function(res){
+		$(res).modal().on('hidden', function(){
+			$(this).detach();
+		});
 	});
 };
 $(function(){

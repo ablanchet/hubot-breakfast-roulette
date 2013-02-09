@@ -5,6 +5,7 @@
 
 var express = require('express')
   , routes = require('./routes')
+  , br = require('./routes/breakfast')
   , http = require('http')
   , path = require('path');
 
@@ -27,6 +28,8 @@ app.configure('development', function(){
 });
 
 app.get('/', routes.index);
+br.maproutes(app);
+
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
 });
